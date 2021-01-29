@@ -61,11 +61,11 @@ HELP_STRINGS = """
 ──「 Hey there! My name is *{}*. 」──
 Have a look at the following for an idea of some of the things I can help you with.
 
-*Main* commands available:
- • /help: PM's you this message.
- • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
- • /settings:
+──「 *Main* commands available: 」──
+ ✧ /help: PM's you this message.
+ ✧ /help <module name>: PM's you info about that module.
+ ✧ /donate: information on how to donate!
+ ✧ /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
 
@@ -76,10 +76,10 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/2bbe6208b097878d44d26.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/30af82d5ecd2d984272d4.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-Saitama is hosted on one of Kaizoku's Servers and doesn't require any donations as of now but \
+Takagi is hosted on Heroku and doesn't require any donations as of now but \
 You can donate to the original writer of the Base code, Paul
 There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
 
@@ -199,7 +199,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="🧲Add Ash Ketchum to your group!",
+                            text="🧲 Add Tagaki to your group!",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -208,22 +208,17 @@ def start(update: Update, context: CallbackContext):
                              text="⚙️ Support Group",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
-                             text="🔔Updates Channel",
+                             text="🔔 Updates Channel",
                              url="https://t.me/BotLabUpdates")
                      ],
                      [
                          InlineKeyboardButton(
-                             text="📖 Getting Started Guide",
-                             url="https://t.me/BotLabUpdates/3")
-                     ],
-                     [
-                         InlineKeyboardButton(
                              text="💾 Source Code.",
-                             url="https://github.com/Uday0011/Ash")
+                             url="https://github.com/ShinchanNohara1/TakagiRobot")
                      ]]))
     else:
         update.effective_message.reply_text(
-            "I'm online!\n<b>Up since:</b> <code>{}</code>".format(uptime),
+            "I'm fine!\n<b>Up since:</b> <code>{}</code>".format(uptime),
             parse_mode=ParseMode.HTML)
 
 
