@@ -53,13 +53,12 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am an Anime themed group management bot with some fun extras ;)
-You can find the list of available commands with /help
+I am an Anime themed group management bot ;)
+──「 You can find the list of available commands with /help 」──
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a part of Pokemon
+──「 Hey there! My name is *{}*. 」──
 Have a look at the following for an idea of some of the things I can help you with.
 
 *Main* commands available:
