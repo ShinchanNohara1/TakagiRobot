@@ -1,17 +1,21 @@
 import html
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot import dispatcher, DRAGONS
-from SaitamaRobot.modules.helper_funcs.extraction import extract_user
+from ItachiRobot.modules.disable import DisableAbleCommandHandler
+from ItachiRobot import dispatcher, DRAGONS
+from ItachiRobot.modules.helper_funcs.extraction import extract_user
 from telegram.ext import CallbackContext, run_async, CallbackQueryHandler
-import SaitamaRobot.modules.sql.approve_sql as sql
-from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
-from SaitamaRobot.modules.log_channel import loggable
+import ItachiRobot.modules.sql.approve_sql as sql
+from ItachiRobot.modules.helper_funcs.chat_status import (
+    bot_admin,
+    user_admin
+)
+from ItachiRobot.modules.log_channel import loggable
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.utils.helpers import mention_html
 from telegram.error import BadRequest
 
 
 @loggable
+@bot_admin
 @user_admin
 @run_async
 def approve(update, context):
@@ -198,9 +202,7 @@ def unapproveall_btn(update: Update, context: CallbackContext):
 __help__ = """
 Sometimes, you might trust a user not to send unwanted content.
 Maybe not enough to make them admin, but you might be ok with locks, blacklists, and antiflood not applying to them.
-
 That's what approvals are for - approve of trustworthy users to allow them to send 
-
 *Admin commands:*
 - `/approval`*:* Check a user's approval status in this chat.
 - `/approve`*:* Approve of a user. Locks, blacklists, and antiflood won't apply to them anymore.
